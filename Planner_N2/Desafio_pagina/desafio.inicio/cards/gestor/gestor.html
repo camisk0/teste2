@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafios | Case Planner</title>
+  <link rel="stylesheet" href="/Planner_N2/Desafio_pagina/desafio.inicio/cards/gestor/gestor.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- Cabeçalho fixo -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="img/logo.concentrix.png" alt="Logo Concentrix" class="logo-img" />
+    </div>
+    <div class="menu-links">
+      <!-- Atualizando o link do Início para direcionar para a página inicial -->
+      <a href="/Planner_N2/inicio_pagina/index.html">Início</a>  <!-- Redirecionando para a página 'index.html' -->
+      <a href="#">Desafios</a>
+    </div>
+    <img src="img/menu.PNG" alt="Menu" class="menu-icon" />
+  </header>
+
+  <main class="main-content">
+    <h1 class="title">Falha Geração de <span class="highlight">Relatórios</span></h1>
+
+    <div class="graph-row">
+      <!-- Gráfico 1 (agora será um vídeo) -->
+      <div class="graph-item">
+        <div class="graph-subtitle">Passo a Passo</div>
+        <div class="graph-box">
+          <div class="cyan-border"></div>
+          <!-- Substituindo img por video -->
+          <video class="clickable-video" data-videos='["video/video1.mp4", "https://www.example.com/video2.mp4", "https://www.example.com/video3.mp4"]' controls>
+            <source src="video/Bloqueio_Global.mp4" type="video/mp4">
+            Seu navegador não suporta o formato de vídeo.
+          </video>
+          <div class="graph-text">
+            <p><span class="text-cyan">• Lorem</span> ipsum aliquam ornare nam ut eleifend ornare...</p>
+            <p><span class="text-cyan">• aenean</span>, malesuada lobortis tellus tempor dapibus...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <!-- Aqui, será substituído pela tag <video> com controle -->
+    <video id="modalImage" class="modal-content" controls>
+      <source src="" type="video/mp4">
+      Seu navegador não suporta este vídeo.
+    </video>
+    <button class="arrow-button left" id="prevImageBtn">&#9664;</button>
+    <button class="arrow-button right" id="nextImageBtn">&#9654;</button>
+  </div>
+
+  <script>
+    let videosArray = [];
+    let currentVideoIndex = 0;
+
+    $(document).ready(function () {
+      $(".clickable-video").click(function () {
+        const videoSrc = $(this).find("source").attr("src");
+        videosArray = JSON.parse($(this).attr("data-videos"));
+        currentVideoIndex = videosArray.indexOf(videoSrc);
+
+        // Criar a tag de vídeo no modal
+        $("#modalImage").replaceWith('<video id="modalImage" class="modal-content" controls><source src="' + videoSrc + '" type="video/mp4">Seu navegador não suporta este vídeo.</video>');
+        
+        $("#imageModal").show();
+        $("#nextImageBtn").show();
+        $("#prevImageBtn").show();
+      });
+
+      $(".close").click(function () {
+        $("#imageModal").hide();
+        $("#modalImage")[0].pause(); // Para o vídeo quando o modal for fechado
+      });
+
+      $(window).click(function (event) {
+        if (event.target == document.getElementById("imageModal")) {
+          $("#imageModal").hide();
+          $("#modalImage")[0].pause(); // Para o vídeo ao clicar fora do modal
+        }
+      });
+
+      $("#nextImageBtn").click(function () {
+        currentVideoIndex = (currentVideoIndex + 1) % videosArray.length;
+        const nextVideo = videosArray[currentVideoIndex];
+        $("#modalImage").find("source").attr("src", nextVideo);
+        $("#modalImage")[0].load(); // Carrega o próximo vídeo
+        $("#modalImage")[0].play(); // Começa a reprodução automaticamente
+      });
+
+      $("#prevImageBtn").click(function () {
+        currentVideoIndex = (currentVideoIndex - 1 + videosArray.length) % videosArray.length;
+        const prevVideo = videosArray[currentVideoIndex];
+        $("#modalImage").find("source").attr("src", prevVideo);
+        $("#modalImage")[0].load(); // Carrega o vídeo anterior
+        $("#modalImage")[0].play(); // Começa a reprodução automaticamente
+      });
+    });
+  </script>
+</body>
+</html>

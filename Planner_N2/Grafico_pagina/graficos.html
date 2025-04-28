@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gráficos | Case Planner</title>
+  <link rel="stylesheet" href="graficos.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="graficos.js" defer></script>
+</head>
+
+<body>
+
+  <header class="top-bar">
+    <div class="logo">
+      <img src="img/logo.concentrix.png" alt="Logo Concentrix" class="logo-img" />
+    </div>
+    <div class="menu-links">
+      <a href="/Planner_N2/inicio_pagina/index.html">Início</a>
+      <a href="#">Gráficos</a>
+      <a href="/Planner_N2/Desafio_pagina/desafio.inicio/inicio.html">Desafios</a>
+    </div>
+    <img src="img/menu.PNG" alt="Menu" class="menu-icon" />
+  </header>
+
+  <main class="main-content">
+    <h1 class="title">Gráfico <span class="highlight">Demonstração</span></h1>
+
+    <div class="graph-row">
+      <div class="graph-item">
+        <div class="graph-subtitle" id="graphTitle">Indicadores</div>
+        <div class="graph-box">
+          <div class="cyan-border"></div>
+          <img src="img/grafico1.png" alt="Gráfico 1" class="clickable-image"
+            data-images='["img/grafico1.png", "img/grafico2.png", "img/grafico3.png"]'
+            data-titles='["Indicadores", "Ranking", "Desempenho"]' />
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow-button left" id="prevGraphBtn">&#9664;</button>
+    <button class="arrow-button right" id="nextGraphBtn">&#9654;</button>
+
+    <!-- NOVA SEÇÃO - ANÁLISE CONSOLIDADA -->
+    <section class="analise-section">
+
+      <h2>Análise Consolidada – Carteira GCB <span class="text-cyan">(Jan & Fev & Mar/2025)</span></h2>
+
+      <p>Ao analisar os resultados dos últimos três meses, observamos um cenário de evolução significativa na carteira GCB, especialmente no mês de março.</p>
+
+      <div class="cyan-line"></div>
+
+      <p>Em fevereiro, a operação enfrentou seu pior desempenho no trimestre, com:</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">TME elevado</span> (1.51Min) e Ocupação baixa (27%) — indicando maior tempo de espera em atendimentos.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Volume de atendimentos</span> — -6% inferior a janeiro e -12,85% inferior a março.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Menor quantidade de logados</span> (57.89Mil) — Menos força de trabalho, menor chance de conversão.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Aumento de 63% congestion e 42% em Hang Up</span> — Apontando para falhas em telefonia e baixa assertividade de clientes, o que explica queda no volume de atendimentos.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Volume de clientes</span> — -7,71% menor do que março.</p>
+
+      <div class="cyan-line"></div>
+
+      <p>Em março, houve uma clara recuperação operacional:</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Redução no TME</span> para 1.30Min (-18,46% vs fevereiro).</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Aumento na Ocupação</span> para 28,76% — Demonstra evolução comparada com os demais meses, mesmo que baixa.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Crescimento de 12,85% nos atendimentos</span> em relação ao mês anterior.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Redução de 8,62% nos logados</span> (cerca de 58 mil) comparada com janeiro — indicando maior produtividade individual, mesmo com quadro reduzido.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Crescimento de 26% em promessas</span> geradas comparada com o mês de fevereiro.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Disparos foram semelhantes nos meses de março e fevereiro, com aumento de 4 milhões de disparos em janeiro</span>. Mesmo com essa diferença, tivemos um melhor cenário em março comparado com os últimos três meses, o que mostra uma melhor localização de clientes, gerando mais sucesso.</p>
+      <p>- Essa evolução permitiu à carteira assumir o 1º lugar em performance no ranking geral da operação, exceto na faixa <span style="color: #00918f; font-weight: bold;">03 a 60</span>, onde ficamos em 2º lugar.</p>
+
+      <div class="cyan-line"></div>
+
+      <h3>Analisando por segmento:</h3>
+
+      <p>•<span style="color: #00918f; font-weight: bold;">Grupo A</span> (principal operação): alta na produtividade e melhor aproveitamento dos disparos em março.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">CB Conect e Banqi</span>: volumes menores, mas mantiveram estabilidade nos KPIs principais.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;">Agência 93</span>: apesar de menor representatividade, mostrou bom crescimento de promessas.</p>
+
+      <h3>Ponto de Atenção:</h3>
+      <p>- A faixa de clientes de <span style="color: #00918f; font-weight: bold;">03 a 60</span> dias ainda apresenta oportunidade de melhorias, concentrando o maior volume de trabalho e, consequentemente, a maior dispersão de TME.</p>
+
+      <div class="cyan-line"></div>
+
+      <h2>Grupo A e <span class="text-cyan">Segmentação de Contratos</span></h2>
+
+      <p>•<span style="color: #00918f; font-weight: bold;"> Grupo A:</span> Foco na cobrança de varejo normal.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;"> BanQi:</span> Cobrança de empréstimos.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;"> CB Conect:</span> Cobrança multi-meios, incluindo WhatsApp, discagem humana e discagem automática.</p>
+
+      <p>•<span style="color: #00918f; font-weight: bold;">Subgrupos no Grupo A:</span></p>
+      <p>•<span style="color: #00918f; font-weight: bold;"> Replan:</span> Contratos que podem ser reparcelados.</p>
+      <p>•<span style="color: #00918f; font-weight: bold;"> Colchão:</span> Contratos já reparcelados.</p>
+
+      <p>•<span style="color: #00918f; font-weight: bold;">Destaque no Ranking:</span> Bom desempenho em Replan e Colchão garante pontos extras no ranking, o que é importante para avaliar a performance geral.</p>
+
+      <!-- Continua o restante... -->
+
+    </section>
+
+    <!-- MODAL -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle" class="modal-title">Indicadores</h2>
+      <img class="modal-content" id="modalImage">
+      <button class="arrow-button left" id="prevModalBtn">&#9664;</button>
+      <button class="arrow-button right" id="nextModalBtn">&#9654;</button>
+    </div>
+
+  </main>
+
+</body>
+</html>
